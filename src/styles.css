@@ -13,7 +13,7 @@ nav {
   justify-content: space-around;
 }
 
-nav > button {
+nav>button {
   font-size: 1.5rem;
   font-weight: bold;
   border: none;
@@ -29,7 +29,7 @@ h3 {
   font-style: italic;
 }
 
-#content > p {
+#content>p {
   width: 75ch;
   font-size: 1.2em;
   line-height: 1.5em;
@@ -53,15 +53,22 @@ h3 {
   height: 100%;
 }
 
-.dishList {
-  display: flex;
-  flex-direction: column;
+.dish-card {
+  display: grid;
+  grid-template: 1fr 2fr / 3fr 1fr;
   align-items: center;
+
+  border: solid black 1px;
+  width: 250px;
+  gap: 0;
 }
 
-.dish {
-  border: solid black 1px;
-  padding: 2em;
-  margin: 0.5rem;
-  width: 150px;
+.dish-card > * {
+  padding: 0.5em;
+  margin: 0;
 }
+
+.ingredients {
+  grid-column: 1 / span 2;
+}
+

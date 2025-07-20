@@ -1,7 +1,8 @@
 
 import "./styles.css"
 import { homeModule } from "./home"
-import { menuModule } from "./menu"
+import { Menu, mainDishes } from "./menu"
+import { aboutModule } from "./about"
 
 const content = document.querySelector("#content")
 
@@ -16,11 +17,15 @@ home.addEventListener("click", () => {
 const menu = document.querySelector("#menu")
 menu.addEventListener("click", () => {
   clean()
-  menuModule(content)
+  Menu.addHeading(content)
+  mainDishes.forEach(item => Menu.addDishCard(item, content))
 })
 
-// const about = document.querySelector("#about")
-// home.addEventListener("click", () => aboutModule())
+const about = document.querySelector("#about")
+about.addEventListener("click", () => {
+  clean()
+  aboutModule(content)
+})
 
 function clean() {
   content.innerHTML = ""

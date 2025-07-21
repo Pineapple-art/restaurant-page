@@ -2,7 +2,7 @@
 import "./styles.css"
 import { homeModule } from "./home"
 import { Menu, mainDishes } from "./menu"
-import { aboutModule } from "./about"
+import { About } from "./about"
 
 const content = document.querySelector("#content")
 
@@ -24,7 +24,7 @@ menu.addEventListener("click", () => {
 const about = document.querySelector("#about")
 about.addEventListener("click", () => {
   clean()
-  aboutModule(content)
+  About.addAbout(content)
 })
 
 function clean() {

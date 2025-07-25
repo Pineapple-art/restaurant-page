@@ -18,7 +18,7 @@ const menu = document.querySelector("#menu")
 menu.addEventListener("click", () => {
   clean()
   Menu.addHeading(content)
-  mainDishes.forEach(item => Menu.addDishCard(item, content))
+  Menu.addMenuSection(mainDishes, content)
 })
 
 const about = document.querySelector("#about")
@@ -31,7 +31,3 @@ function clean() {
   content.innerHTML = ""
 }
 
-
-class Tabs {
-  // static 
-}

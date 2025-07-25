@@ -12,7 +12,11 @@ class About {
     const aboutText = document.createElement("p")
     aboutText.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolor, aut, dicta eaque eveniet necessitatibus ipsam quam excepturi consectetur et tempora asperiores. Sequi et blanditiis eligendi exercitationem recusandae quas sed."
 
+    const aboutText2 = document.createElement("p")
+    aboutText2.textContent = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim, ipsa nostrum! Alias possimus illo maiores. Dolorem est cupiditate magni quod. Voluptates, molestiae? Voluptatem error magni doloribus adipisci dolore. Libero, adipisci."
+
     container.appendChild(aboutText)
+    container.appendChild(aboutText2)
   }
 
   static #addContacts(container) {
@@ -40,6 +44,7 @@ class About {
 
   static addAbout(content) {
     const container = document.createElement("div")
+    container.classList.add("about")
 
     this.#addText(container)
     this.#addContacts(container)

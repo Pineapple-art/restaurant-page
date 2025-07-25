@@ -24,8 +24,8 @@ class Menu {
 
   }
 
-  static addDishCard(dish, div) {
-    const dishCard = document.createElement("section")
+  static #addDishCard(dish, div) {
+    const dishCard = document.createElement("li")
     dishCard.classList.add("dish-card")
 
     this.#addDish(dish, dishCard)
@@ -37,6 +37,18 @@ class Menu {
     const menu = document.createElement("h2")
     menu.textContent = "Awesome Pineapple"
     div.appendChild(menu)
+  }
+
+  static addMenuSection(dishes, div) {
+    const menu = document.createElement("ul")
+    menu.classList.add("menu-section")
+
+    dishes.forEach(dish => {
+      this.#addDishCard(dish, menu)
+    });
+    
+    div.appendChild(menu)
+
   }
 
 }
@@ -72,6 +84,47 @@ const mainDishes = [
     name: "Veggie Wrap",
     price: "$8.50",
     ingredients: "Tortilla, hummus, cucumber, lettuce, bell pepper, avocado",
+  },
+];
+
+const desserts = [
+  {
+    name: "Tiramisu",
+    price: "$6.99",
+    ingredients: "Mascarpone, espresso, ladyfingers, cocoa powder",
+  },
+  {
+    name: "Chocolate Lava Cake",
+    price: "$7.50",
+    ingredients: "Dark chocolate, eggs, butter, sugar, flour",
+  },
+  {
+    name: "Vanilla Panna Cotta",
+    price: "$6.25",
+    ingredients: "Cream, vanilla, sugar, gelatin, berries",
+  },
+];
+
+const drinks = [
+  {
+    name: "Fresh Lemonade",
+    price: "$2.99",
+    ingredients: "Lemon juice, water, sugar, mint",
+  },
+  {
+    name: "Iced Coffee",
+    price: "$3.50",
+    ingredients: "Brewed coffee, ice, milk or cream (optional)",
+  },
+  {
+    name: "Sparkling Water",
+    price: "$2.50",
+    ingredients: "Carbonated water, lemon slice",
+  },
+  {
+    name: "House Red Wine (Glass)",
+    price: "$6.75",
+    ingredients: "Dry red wine blend",
   },
 ];
 
